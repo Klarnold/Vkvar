@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=4 uid="uid://i3frudiuxot7"]
+
+[ext_resource type="Script" uid="uid://d36mh1pq8q5q7" path="res://scenes/experiment/Experiment.cs" id="1_sv8v8"]
+[ext_resource type="PackedScene" uid="uid://c2fr5virks30d" path="res://scenes/tools/cosmic_tml.tscn" id="2_bdg66"]
+[ext_resource type="Texture2D" uid="uid://ckssvw2lawjhk" path="res://assets/Animated Pixel-Art Backgrounds Free/Art/Background 7 (Bonus).png" id="3_8sxor"]
+[ext_resource type="PackedScene" uid="uid://20p5wvbjg5hb" path="res://scenes/tools/body_a_2d.tscn" id="5_8x20h"]
+[ext_resource type="Script" uid="uid://gy7iulp1ygns" path="res://scenes/experiment/Control.cs" id="5_ybw6y"]
+[ext_resource type="PackedScene" uid="uid://d1hnqec0rrom7" path="res://scenes/tools/player.tscn" id="7_qdnpw"]
+[ext_resource type="PackedScene" uid="uid://88rwmp21c7gm" path="res://scenes/tools/platform_sb_2d.tscn" id="8_4qy21"]
+
+[node name="Experiment" type="Node2D"]
+script = ExtResource("1_sv8v8")
+
+[node name="BackgroundS2D" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(0.256, 0.288)
+texture = ExtResource("3_8sxor")
+
+[node name="CosmicTML" parent="." instance=ExtResource("2_bdg66")]
+tile_map_data = PackedByteArray("AAA4ACoAAAABAAAAAAA3ACoAAAABAAAAAAA2ACoAAAABAAAAAAA1ACoAAAABAAAAAAA0ACoAAAABAAAAAAAzACoAAAABAAAAAAAyACoAAAABAAAAAAAxACoAAAABAAAAAAAwACoAAAABAAAAAAAvACoAAAABAAAAAAAuACoAAAABAAAAAAAtACoAAAABAAAAAAAsACoAAAABAAAAAAArACoAAAABAAAAAAAqACoAAAABAAAAAAApACoAAAABAAAAAAAoACoAAAABAAAAAAAnACoAAAABAAAAAAAmACoAAAABAAAAAAAlACoAAAABAAAAAAAkACoAAAABAAAAAAAjACoAAAABAAAAAAAiACoAAAABAAAAAAAhACoAAAABAAAAAAAgACoAAAABAAAAAAAfACoAAAABAAAAAAAeACoAAAABAAAAAAAdACoAAAABAAAAAAAcACoAAAABAAAAAAAbACoAAAABAAAAAAAaACoAAAABAAAAAAAZACoAAAABAAAAAAAYACoAAAABAAAAAAAXACoAAAABAAAAAAAWACoAAAABAAAAAAAVACoAAAABAAAAAAAUACoAAAABAAAAAAATACoAAAABAAAAAAASACoAAAABAAAAAAA=")
+
+[node name="Player" parent="." groups=["cReality1"] instance=ExtResource("7_qdnpw")]
+position = Vector2(572, 483)
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 41
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 660.0
+offset_top = 280.0
+offset_right = 860.0
+offset_bottom = 480.0
+script = ExtResource("5_ybw6y")
+
+[node name="BodyA2D" parent="Control" instance=ExtResource("5_8x20h")]
+position = Vector2(-553, -179)
+scale = Vector2(8, 8)
+
+[node name="Platforms" type="Node" parent="."]
+
+[node name="PlatformSB2D" parent="Platforms" groups=["wReality1"] instance=ExtResource("8_4qy21")]
+position = Vector2(437, 580)
+
+[node name="PlatformSB2D2" parent="Platforms" groups=["wReality2"] instance=ExtResource("8_4qy21")]
+position = Vector2(861, 583)

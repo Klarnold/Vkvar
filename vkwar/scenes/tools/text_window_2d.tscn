@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://k16jppfhquj7"]
+
+[ext_resource type="Script" uid="uid://pg5dj16n2bj0" path="res://scenes/tools/TextWindow2d.cs" id="1_ueq5h"]
+[ext_resource type="Texture2D" uid="uid://dhj2kvs4j8ag3" path="res://assets/aseprite/Dark.png" id="2_2l3hs"]
+
+[node name="TextWindow2D" type="Node2D" node_paths=PackedStringArray("_richTL", "_letterTimer")]
+script = ExtResource("1_ueq5h")
+_richTL = NodePath("TextWindowRTL")
+_letterTimer = NodePath("LetterTimer")
+
+[node name="TextWindowS2D" type="Sprite2D" parent="."]
+position = Vector2(59.25, 44)
+scale = Vector2(3.47143, 1.83333)
+texture = ExtResource("2_2l3hs")
+
+[node name="TextWindowRTL" type="RichTextLabel" parent="."]
+offset_right = 128.0
+offset_bottom = 88.0
+theme_override_font_sizes/normal_font_size = 12
+text = "ЛКМ - поменять реальность
+ПКМ - уничтожить противника в прицеле"
+
+[node name="LetterTimer" type="Timer" parent="."]
+wait_time = 0.05

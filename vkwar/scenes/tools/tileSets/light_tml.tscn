@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtcygl0a2cggk"]
+
+[ext_resource type="Texture2D" uid="uid://cvdlyuu6miwec" path="res://assets/aseprite/Light.png" id="1_ohklv"]
+[ext_resource type="Texture2D" uid="uid://dhj2kvs4j8ag3" path="res://assets/aseprite/Dark.png" id="2_i1qhs"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f3oap"]
+texture = ExtResource("1_ohklv")
+texture_region_size = Vector2i(7, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_foo0a"]
+texture = ExtResource("2_i1qhs")
+texture_region_size = Vector2i(7, 16)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+4:1/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cj66d"]
+tile_size = Vector2i(7, 16)
+sources/0 = SubResource("TileSetAtlasSource_f3oap")
+sources/1 = SubResource("TileSetAtlasSource_foo0a")
+
+[node name="LightTML" type="TileMapLayer"]
+tile_set = SubResource("TileSet_cj66d")

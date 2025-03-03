@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5r2fqkdnsdq6"]
+
+[ext_resource type="AudioStream" uid="uid://dv78ftp5bb7re" path="res://sounds/mainTheme.mp3" id="1_fs3un"]
+
+[node name="MainThemeASP2D" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_fs3un")
+volume_db = -20.0
+autoplay = true

@@ -1,0 +1,160 @@
+[gd_scene load_steps=5 format=3 uid="uid://v5lgbe8d1lqa"]
+
+[ext_resource type="Script" uid="uid://bdmpjgp71l72t" path="res://scenes/tools/tileSets/ExitMenuBtn.cs" id="1_26ncd"]
+[ext_resource type="Script" uid="uid://dl7edf1okyc7u" path="res://scenes/settings/MusicSlider.cs" id="1_vu5fi"]
+[ext_resource type="Script" uid="uid://bvy1loal3obml" path="res://scenes/settings/WindowCheckBox.cs" id="4_1slea"]
+[ext_resource type="Script" uid="uid://b6ijvduyqnhid" path="res://scenes/settings/ResolutionOBtn.cs" id="5_v1hle"]
+
+[node name="Settings" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 160.0
+offset_right = 840.0
+offset_bottom = 560.0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -39.5
+offset_right = 272.0
+offset_bottom = 89.5
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="MasterLbl" type="Label" parent="Panel/VBoxContainer2"]
+layout_mode = 2
+text = "Master:"
+
+[node name="MusicLbl" type="Label" parent="Panel/VBoxContainer2"]
+layout_mode = 2
+text = "Музыка:"
+
+[node name="SFXLbl" type="Label" parent="Panel/VBoxContainer2"]
+layout_mode = 2
+text = "Звуковые эффекты:"
+
+[node name="ExitMenuBtn" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -31.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Вернуться в меню"
+script = ExtResource("1_26ncd")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Настройки"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+offset_left = 194.0
+offset_top = 163.0
+offset_right = 394.0
+offset_bottom = 287.0
+theme_override_constants/separation = 38
+
+[node name="MasterSlider" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("1_vu5fi")
+e_busName = "Master"
+
+[node name="MusicSlider" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("1_vu5fi")
+e_busName = "Music"
+
+[node name="SFXSlider" type="HSlider" parent="Panel/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("1_vu5fi")
+e_busName = "Sound Effects"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -114.5
+offset_top = -140.0
+offset_right = 114.5
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="WindowModeLbl" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Полноэкранный режим: "
+
+[node name="WindowCheckBox" type="CheckBox" parent="Panel/HBoxContainer"]
+layout_mode = 2
+script = ExtResource("4_1slea")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -90.0
+offset_right = 167.0
+offset_bottom = -50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+
+[node name="ResolutionLbl" type="Label" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+text = "Разрешение экрана: "
+
+[node name="ResolutionOBtn" type="OptionButton" parent="Panel/HBoxContainer2"]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "1280x720"
+popup/item_0/id = 0
+popup/item_1/text = "1366x768"
+popup/item_1/id = 1
+popup/item_2/text = "1920x1080"
+popup/item_2/id = 2
+script = ExtResource("5_v1hle")

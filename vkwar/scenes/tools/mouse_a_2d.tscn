@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2e3gq8v5m6so"]
+
+[ext_resource type="Script" uid="uid://bg780ilf873ip" path="res://scenes/tools/MouseA2d.cs" id="1_hx5fr"]
+[ext_resource type="Texture2D" uid="uid://bntddtymyx3r8" path="res://assets/aseprite/Reticle.png" id="2_7rynb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bn6cg"]
+radius = 28.0
+
+[node name="MouseA2D" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_hx5fr")
+
+[node name="MouseCS2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bn6cg")
+
+[node name="MouseS2D" type="Sprite2D" parent="."]
+z_index = 1
+scale = Vector2(1.64286, 1.64286)
+texture = ExtResource("2_7rynb")

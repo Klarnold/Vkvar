@@ -1,0 +1,99 @@
+[gd_scene load_steps=20 format=4 uid="uid://bsdmjksykvcoq"]
+
+[ext_resource type="Script" uid="uid://b5abmv1unsvb2" path="res://scenes/game/Game.cs" id="1_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://jwacv35usck1" path="res://scenes/tools/bgp_2d.tscn" id="1_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://d1hnqec0rrom7" path="res://scenes/tools/player.tscn" id="2_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://88rwmp21c7gm" path="res://scenes/tools/platform_sb_2d.tscn" id="4_87uf6"]
+[ext_resource type="PackedScene" uid="uid://c7ppyyk1biddo" path="res://scenes/tools/gravity_a_2d.tscn" id="5_2a8rs"]
+[ext_resource type="PackedScene" uid="uid://cjunumgw3i7oo" path="res://scenes/tools/enemy_cb_2d.tscn" id="6_5i0tg"]
+[ext_resource type="PackedScene" uid="uid://b2e3gq8v5m6so" path="res://scenes/tools/mouse_a_2d.tscn" id="7_bdhmt"]
+[ext_resource type="PackedScene" uid="uid://dqbu8ilmx458a" path="res://scenes/tools/damage_a_2d.tscn" id="8_4j704"]
+[ext_resource type="PackedScene" uid="uid://cln5aacnexn4u" path="res://scenes/tools/interactive_a_2d.tscn" id="8_87uf6"]
+[ext_resource type="PackedScene" uid="uid://i3m8iqr74gae" path="res://scenes/tools/spikes_a_2d.tscn" id="9_kp23o"]
+[ext_resource type="PackedScene" uid="uid://c2qbdxdattiqe" path="res://scenes/tools/spikes_alt_a_2d.tscn" id="10_5jirj"]
+[ext_resource type="PackedScene" uid="uid://cx0ecnagxv5mx" path="res://scenes/tools/tileSets/bush_tml.tscn" id="12_uyinl"]
+[ext_resource type="PackedScene" uid="uid://b4gcd31k6tc1o" path="res://scenes/tools/tileSets/lamp_tml.tscn" id="13_10c2w"]
+[ext_resource type="PackedScene" uid="uid://bl8vhls5xycdi" path="res://scenes/tools/tileSets/wall_tml.tscn" id="14_pg2xm"]
+[ext_resource type="PackedScene" uid="uid://chg3d2ojup6lx" path="res://scenes/tools/tileSets/floor_tml.tscn" id="15_gc57s"]
+[ext_resource type="PackedScene" uid="uid://d1csy74hri1pi" path="res://scenes/tools/tileSets/house_tml.tscn" id="16_8b66f"]
+[ext_resource type="PackedScene" uid="uid://dtcygl0a2cggk" path="res://scenes/tools/tileSets/light_tml.tscn" id="17_3jaai"]
+[ext_resource type="PackedScene" uid="uid://bjpan6dn6idf4" path="res://scenes/tools/tileSets/window_tml.tscn" id="18_1iff4"]
+[ext_resource type="AudioStream" uid="uid://coxrlco4gpxkx" path="res://sounds/gameTheme.mp3" id="19_10c2w"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_2a8rs")
+
+[node name="Player" parent="." groups=["cReality2"] instance=ExtResource("2_5i0tg")]
+z_index = 1
+position = Vector2(72, 144)
+scale = Vector2(2.4, 2.4)
+collision_mask = 85
+
+[node name="ParallaxBG" parent="." instance=ExtResource("1_lfrn8")]
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="PlatformSB2D4" parent="Platforms" instance=ExtResource("4_87uf6")]
+position = Vector2(496, 232)
+
+[node name="PlatformSB2D" parent="Platforms" groups=["wReality1"] instance=ExtResource("4_87uf6")]
+position = Vector2(888, 256)
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="GravityA2D" parent="Areas" groups=["wReality2"] instance=ExtResource("5_2a8rs")]
+position = Vector2(112, -16)
+scale = Vector2(3, 7)
+
+[node name="GravityA2D2" parent="Areas" groups=["wReality1"] instance=ExtResource("5_2a8rs")]
+position = Vector2(232, -16)
+scale = Vector2(3, 8)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="EnemyCB2D" parent="Enemies" groups=["cReality1"] instance=ExtResource("6_5i0tg")]
+position = Vector2(416, 80)
+scale = Vector2(2, 2)
+
+[node name="Pikes" type="Node2D" parent="."]
+
+[node name="SpikesA2D" parent="Pikes" instance=ExtResource("9_kp23o")]
+position = Vector2(-264, 136)
+
+[node name="DamageA2D" parent="Pikes" instance=ExtResource("8_4j704")]
+position = Vector2(-344, 136)
+
+[node name="SpikesAltA2D" parent="Pikes" instance=ExtResource("10_5jirj")]
+position = Vector2(-416, 136)
+
+[node name="InteractiveA2D" parent="." instance=ExtResource("8_87uf6")]
+position = Vector2(16, 144)
+scale = Vector2(2, 2)
+
+[node name="MouseA2D" parent="." instance=ExtResource("7_bdhmt")]
+
+[node name="TileMap" type="Node" parent="."]
+
+[node name="BushTML" parent="TileMap" instance=ExtResource("12_uyinl")]
+
+[node name="LampTML" parent="TileMap" instance=ExtResource("13_10c2w")]
+
+[node name="WallTML" parent="TileMap" instance=ExtResource("14_pg2xm")]
+
+[node name="FloorTML" parent="TileMap" instance=ExtResource("15_gc57s")]
+tile_map_data = PackedByteArray("AAD8/wkAAAAAAAAAAAD9/wkAAAAAAAAAAAD+/wkAAAAAAAAAAAD//wkAAAAAAAAAAAAAAAkAAAAAAAAAAAABAAkAAAAAAAAAAAACAAkAAAAAAAAAAAADAAkAAAAAAAAAAAAEAAkAAAAAAAAAAAAFAAkAAAAAAAAAAAAGAAkAAAAAAAAAAAAHAAkAAAAAAAAAAAAIAAkAAAAAAAAAAAAJAAkAAAAAAAAAAAAKAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAD7/wkAAAAAAAAAAAD6/wgAAAAAAAAAAAD5/wgAAAAAAAAAAAD4/wgAAAAAAAAAAAD3/wcAAAAAAAAAAAD2/wcAAAAAAAAAAAD1/wcAAAAAAAAAAAD1/wYAAAAAAAAAAAD0/wYAAAAAAAAAAAD0/wUAAAAAAAAAAAD0/wQAAAAAAAAAAAD0/wMAAAAAAAAAAAD0/wIAAAAAAAAAAAD1/wIAAAAAAAAAAAD1/wEAAAAAAAAAAAD1/wAAAAAAAAAAAAD1////AAAAAAAAAAD2////AAAAAAAAAAD2//7/AAAAAAAAAAD2//3/AAAAAAAAAAD3//3/AAAAAAAAAAD3//z/AAAAAAAAAAD4//z/AAAAAAAAAAD5//z/AAAAAAAAAAD5//v/AAAAAAAAAAD6//v/AAAAAAAAAAD7//v/AAAAAAAAAAD8//v/AAAAAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAA=")
+
+[node name="HouseTML" parent="TileMap" instance=ExtResource("16_8b66f")]
+
+[node name="LightTML" parent="TileMap" instance=ExtResource("17_3jaai")]
+tile_map_data = PackedByteArray("AAD4//7/AAAAAAAAAAD4////AAAAAAEAAAD4/wAAAAAAAAIAAAD5//7/AAABAAAAAAD5////AAABAAEAAAD5/wAAAAABAAIAAAD6//7/AAACAAAAAAD6////AAACAAEAAAD6/wAAAAACAAIAAAD7//7/AAADAAAAAAD7////AAADAAEAAAD7/wAAAAADAAIAAAD8//7/AAAEAAAAAAD8////AAAEAAEAAAD8/wAAAAAEAAIAAAA=")
+
+[node name="WindowTML" parent="TileMap" instance=ExtResource("18_1iff4")]
+tile_map_data = PackedByteArray("AADu//z/BAAAAAAAAADu//3/BAAAAAEAAADu//7/BAAAAAIAAADv//z/BAABAAAAAADv//3/BAABAAEAAADv//7/BAABAAIAAADw//z/BAACAAAAAADw//3/BAACAAEAAADw//7/BAACAAIAAADx//z/BAADAAAAAADx//3/BAADAAEAAADx//7/BAADAAIAAADy//z/BAAEAAAAAADy//3/BAAEAAEAAADy//7/BAAEAAIAAAA=")
+
+[node name="FloorTML" parent="." instance=ExtResource("15_gc57s")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_10c2w")
+volume_db = -20.0
+autoplay = true

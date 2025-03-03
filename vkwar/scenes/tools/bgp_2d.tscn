@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://jwacv35usck1"]
+
+[ext_resource type="Texture2D" uid="uid://3mqrjigt3fxp" path="res://assets/aseprite/BG.png" id="1_5jc5w"]
+[ext_resource type="Texture2D" uid="uid://bw44tpdpxfycs" path="res://assets/aseprite/ParallaxBG.png" id="2_7bi66"]
+
+[node name="ParallaxBG" type="ParallaxBackground"]
+
+[node name="ParallaxLayer1" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.2, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D1" type="Sprite2D" parent="ParallaxLayer1"]
+position = Vector2(640, 360)
+scale = Vector2(5.33333, 5.33333)
+texture = ExtResource("1_5jc5w")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0)
+motion_mirroring = Vector2(1280, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(640, 360)
+scale = Vector2(5.33333, 5.33333)
+texture = ExtResource("2_7bi66")

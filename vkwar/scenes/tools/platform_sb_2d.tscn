@@ -1,0 +1,211 @@
+[gd_scene load_steps=27 format=3 uid="uid://88rwmp21c7gm"]
+
+[ext_resource type="Script" uid="uid://di3mome6jtcxp" path="res://scenes/tools/PlatformSb2d.cs" id="1_licrl"]
+[ext_resource type="Texture2D" uid="uid://b4xak2j0d06wh" path="res://assets/aseprite/PLSolidSolidt.png" id="2_g3jfs"]
+[ext_resource type="Texture2D" uid="uid://bjqnoqoxvx11o" path="res://assets/aseprite/PLSolid.png" id="3_5umm7"]
+[ext_resource type="Texture2D" uid="uid://bga5fwanifl5w" path="res://assets/aseprite/PLSolidDissolved.png" id="4_iwwny"]
+[ext_resource type="Texture2D" uid="uid://c0sf26rp12enx" path="res://assets/aseprite/PLSolidAlt.png" id="5_53mro"]
+[ext_resource type="Texture2D" uid="uid://wvlhigo12bcp" path="res://assets/aseprite/PLSolidDissolvedAlt.png" id="6_cn8gw"]
+[ext_resource type="Texture2D" uid="uid://bvw16f2xqajmq" path="res://assets/aseprite/PlatformJitter.png" id="7_5umm7"]
+[ext_resource type="Texture2D" uid="uid://booatbjlpweem" path="res://assets/aseprite/PlatformJitterAlt.png" id="8_iwwny"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j362k"]
+size = Vector2(40, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydkiu"]
+size = Vector2(40, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwwny"]
+atlas = ExtResource("7_5umm7")
+region = Rect2(0, 0, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53mro"]
+atlas = ExtResource("7_5umm7")
+region = Rect2(0, 16, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn8gw"]
+atlas = ExtResource("7_5umm7")
+region = Rect2(0, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1to4p"]
+atlas = ExtResource("7_5umm7")
+region = Rect2(0, 48, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65dfy"]
+atlas = ExtResource("7_5umm7")
+region = Rect2(0, 64, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0yqr"]
+atlas = ExtResource("7_5umm7")
+region = Rect2(0, 80, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijxoa"]
+atlas = ExtResource("8_iwwny")
+region = Rect2(0, 80, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ntfjo"]
+atlas = ExtResource("8_iwwny")
+region = Rect2(0, 64, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfwaf"]
+atlas = ExtResource("8_iwwny")
+region = Rect2(0, 48, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j25fs"]
+atlas = ExtResource("8_iwwny")
+region = Rect2(0, 32, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpjgl"]
+atlas = ExtResource("8_iwwny")
+region = Rect2(0, 16, 64, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3pd4"]
+atlas = ExtResource("8_iwwny")
+region = Rect2(0, 0, 64, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ijxoa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iwwny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53mro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn8gw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1to4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65dfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0yqr")
+}],
+"loop": true,
+"name": &"dissolved1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijxoa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ntfjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfwaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j25fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpjgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3pd4")
+}],
+"loop": true,
+"name": &"dissolved2",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_5umm7"]
+resource_name = "dissolved1"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["dissolved1"]
+}
+
+[sub_resource type="Animation" id="Animation_iwwny"]
+resource_name = "dissolved2"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["dissolved2"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_53mro"]
+_data = {
+&"dissolved1": SubResource("Animation_5umm7"),
+&"dissolved2": SubResource("Animation_iwwny")
+}
+
+[node name="PlatformSB2D" type="StaticBody2D" node_paths=PackedStringArray("e_checkA2D", "e_S2D", "e_animatedSprite2D", "e_animationPlayer")]
+scale = Vector2(5, 7.2)
+collision_mask = 0
+script = ExtResource("1_licrl")
+e_checkA2D = NodePath("CheckA2D")
+e_S2D = NodePath("Sprite2D")
+e_animatedSprite2D = NodePath("AnimatedSprite2D")
+e_animationPlayer = NodePath("AnimationPlayer")
+e_platformTextures = Array[Texture2D]([ExtResource("2_g3jfs"), ExtResource("3_5umm7"), ExtResource("4_iwwny"), ExtResource("5_53mro"), ExtResource("6_cn8gw")])
+
+[node name="BodyCS2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j362k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.194444, 0.0731482)
+
+[node name="CheckA2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CheckCS2D" type="CollisionShape2D" parent="CheckA2D"]
+shape = SubResource("RectangleShape2D_ydkiu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.76837e-07, 2.38419e-07)
+scale = Vector2(0.625, 0.3125)
+sprite_frames = SubResource("SpriteFrames_ijxoa")
+animation = &"dissolved1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_53mro")
+}

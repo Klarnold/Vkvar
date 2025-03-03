@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://ifq1f2jfexg5"]
+
+[ext_resource type="Script" uid="uid://bnpeielunldju" path="res://scenes/pauseMenu/ResumeBtn.cs" id="1_2lbgb"]
+[ext_resource type="Script" uid="uid://crhtssyn6yrbb" path="res://scenes/pauseMenu/SettingsGameBtn.cs" id="2_fb3oi"]
+[ext_resource type="Script" uid="uid://x1g3dbfkqoxq" path="res://scenes/pauseMenu/ExitGameMenuBtn.cs" id="2_ojs7b"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 160.0
+offset_right = 840.0
+offset_bottom = 560.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -300.0
+offset_right = 100.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ResumeBtn" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Продолжить игру
+"
+script = ExtResource("1_2lbgb")
+
+[node name="SettingsGameBtn" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Настройки
+"
+script = ExtResource("2_fb3oi")
+
+[node name="ExitGameMenuBtn" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+text = "Выйти в меню
+"
+script = ExtResource("2_ojs7b")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_right = 24.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 35
+text = "Пауза"

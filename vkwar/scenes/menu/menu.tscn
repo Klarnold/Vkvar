@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://c3pl6eb00l3fw"]
+
+[ext_resource type="PackedScene" uid="uid://jwacv35usck1" path="res://scenes/tools/bgp_2d.tscn" id="1_klgdb"]
+[ext_resource type="Script" uid="uid://bydocht1pngo8" path="res://scenes/menu/Menu.cs" id="1_mcvr8"]
+[ext_resource type="Script" uid="uid://bn86r7e2ag8xc" path="res://scenes/menu/ExitBtn.cs" id="2_e0arn"]
+[ext_resource type="Script" uid="uid://bwxpwqv14rgbv" path="res://scenes/menu/StartBtn.cs" id="2_y1o0p"]
+[ext_resource type="Script" uid="uid://cb6g6oq8mhguj" path="res://scenes/menu/SettingsBtn.cs" id="3_r8yej"]
+[ext_resource type="AudioStream" uid="uid://pg7i82u7kxeg" path="res://sounds/mainMenuTheme.mp3" id="6_r8yej"]
+[ext_resource type="PackedScene" uid="uid://v5lgbe8d1lqa" path="res://scenes/settings/settings.tscn" id="7_3y2rt"]
+
+[node name="Menu" type="Node2D" node_paths=PackedStringArray("e_audioPlayer2D", "e_parallaxBG")]
+process_mode = 3
+script = ExtResource("1_mcvr8")
+e_audioPlayer2D = NodePath("AudioStreamPlayer2D")
+e_parallaxBG = NodePath("ParallaxBG")
+
+[node name="ParallaxBG" parent="." instance=ExtResource("1_klgdb")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("6_r8yej")
+autoplay = true
+bus = &"Music"
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="UI/PauseMenu"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 160.0
+offset_right = 840.0
+offset_bottom = 560.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/PauseMenu/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -300.0
+offset_right = 100.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 60
+alignment = 1
+
+[node name="StartBtn" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Начать игру
+"
+script = ExtResource("2_y1o0p")
+
+[node name="SettingsBtn" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer" node_paths=PackedStringArray("e_settings", "e_mainMenu")]
+layout_mode = 2
+text = "Настройки"
+script = ExtResource("3_r8yej")
+e_settings = NodePath("../../../../Settings")
+e_mainMenu = NodePath("../../..")
+
+[node name="ExitBtn" type="Button" parent="UI/PauseMenu/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Выход"
+script = ExtResource("2_e0arn")
+
+[node name="Settings" parent="UI" instance=ExtResource("7_3y2rt")]
+visible = false

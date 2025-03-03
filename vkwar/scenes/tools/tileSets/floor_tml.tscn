@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://chg3d2ojup6lx"]
+
+[ext_resource type="Texture2D" uid="uid://cbogta1uy22iv" path="res://assets/aseprite/Floor.png" id="1_iouwi"]
+[ext_resource type="Texture2D" uid="uid://b8v6s7twr1ft" path="res://assets/aseprite/FloorIndoors.png" id="2_20832"]
+[ext_resource type="Texture2D" uid="uid://i8ijpfbspiwm" path="res://assets/aseprite/FloorInWall.png" id="7_81ejq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ybxbs"]
+texture = ExtResource("1_iouwi")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m2nso"]
+texture = ExtResource("2_20832")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qfmis"]
+texture = ExtResource("7_81ejq")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_elxl2"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_ybxbs")
+sources/1 = SubResource("TileSetAtlasSource_m2nso")
+sources/2 = SubResource("TileSetAtlasSource_qfmis")
+
+[node name="FloorTML" type="TileMapLayer"]
+tile_set = SubResource("TileSet_elxl2")

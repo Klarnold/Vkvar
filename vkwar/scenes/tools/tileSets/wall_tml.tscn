@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bl8vhls5xycdi"]
+
+[ext_resource type="Texture2D" uid="uid://cfxffp6alise6" path="res://assets/aseprite/Wall.png" id="1_vqgck"]
+[ext_resource type="Texture2D" uid="uid://32r8ii7arc4a" path="res://assets/aseprite/WallInside.png" id="2_w5lqx"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2q4rw"]
+texture = ExtResource("1_vqgck")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ywyhf"]
+texture = ExtResource("2_w5lqx")
+texture_region_size = Vector2i(7, 7)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+2:2/0 = 0
+1:2/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+4:3/0 = 0
+3:3/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j8d31"]
+tile_size = Vector2i(7, 7)
+sources/0 = SubResource("TileSetAtlasSource_2q4rw")
+sources/1 = SubResource("TileSetAtlasSource_ywyhf")
+
+[node name="WallTML" type="TileMapLayer"]
+tile_set = SubResource("TileSet_j8d31")

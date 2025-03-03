@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://i3m8iqr74gae"]
+
+[ext_resource type="Script" uid="uid://b47et0rlwqk4l" path="res://scenes/tools/SpikesA2d.cs" id="1_s2mse"]
+[ext_resource type="Texture2D" uid="uid://0lfs8lsbfchy" path="res://assets/aseprite/Spikes.png" id="2_1fav2"]
+
+[node name="SpikesA2D" type="Area2D" node_paths=PackedStringArray("e_spikesS2D") groups=["wReality1"]]
+scale = Vector2(3, 3)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_s2mse")
+e_spikesS2D = NodePath("SpikesS2D")
+
+[node name="SpikesCP2D2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(5, -1, 2, -8, 0, 1, -5, -1, -7, 4, -12, -4, -12, 12, 12, 12, 12, -1)
+
+[node name="SpikesS2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1fav2")

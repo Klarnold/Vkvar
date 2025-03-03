@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx0ecnagxv5mx"]
+
+[ext_resource type="Texture2D" uid="uid://bno30vgkj8ful" path="res://assets/aseprite/Bush.png" id="1_7p1os"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbabx"]
+texture = ExtResource("1_7p1os")
+texture_region_size = Vector2i(16, 30)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_rf5kj"]
+sources/0 = SubResource("TileSetAtlasSource_nbabx")
+
+[node name="BushTML" type="TileMapLayer"]
+tile_set = SubResource("TileSet_rf5kj")

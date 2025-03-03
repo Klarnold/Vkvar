@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://cln5aacnexn4u"]
+
+[ext_resource type="Script" uid="uid://fpoo3oexncd4" path="res://scenes/tools/InteractiveA2d.cs" id="1_0myyx"]
+[ext_resource type="Texture2D" uid="uid://cvdlyuu6miwec" path="res://assets/aseprite/Light.png" id="2_2bk8g"]
+[ext_resource type="PackedScene" uid="uid://k16jppfhquj7" path="res://scenes/tools/text_window_2d.tscn" id="2_osnp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvie3"]
+size = Vector2(25, 32)
+
+[node name="InteractiveA2D" type="Area2D" node_paths=PackedStringArray("_textWindow2D")]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_0myyx")
+_textWindow2D = NodePath("TextWindow2D")
+
+[node name="TextWindow2D" parent="." instance=ExtResource("2_osnp4")]
+position = Vector2(8, -88)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -12)
+scale = Vector2(0.457143, 0.5)
+texture = ExtResource("2_2bk8g")
+
+[node name="InteractiveCS2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_qvie3")

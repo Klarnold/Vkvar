@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://1sub6u6y5cda"]
+
+[node name="TextWindowS2D" type="Sprite2D"]
+
+[node name="CloudRichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -16.0
+offset_top = -24.0
+offset_right = 112.0
+offset_bottom = 56.0
+theme_override_font_sizes/normal_font_size = 12
+text = "Сосал? Да"
+
+[node name="LetterTimer" type="Timer" parent="."]
+wait_time = 0.05
